@@ -29,13 +29,23 @@ the cost of a vehicle driving from one point to another point on 407 ETR.
 
 4. Once the application is up and running, open your browser and navigate to http://localhost:8080. This should display your application's home page.
 
+5. Import [postman_collection.json](assets/postman/postman_collection.json) to directly use the APIs
+
 ## Output
 #### Landing Page
-![Landing Page](./images/landing_page.png)
+![Landing Page](assets/images/landing_page.png)
 
 #### Select entry or exit locations that are loaded from Server.
-![Select Locations](./images/select_options.png)
+![Select Locations](assets/images/select_options.png)
 
 #### Result received from server
-![Result](./images/cost.png)
+![Result](assets/images/cost.png)
+
+## Postman Output
+
+#### Get All Locations
+![Get All Locations](assets/images/postman_get_all_locations.png)
+
+#### Get Cost of trip
+![Get Cost of Trip](assets/images/postman_get_cost_of_trip.png)
 
