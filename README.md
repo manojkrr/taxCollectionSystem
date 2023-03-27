@@ -28,3 +28,14 @@ the cost of a vehicle driving from one point to another point on 407 ETR.
    b. In the IDE, navigate to the TollPricingServiceApplication class and run the main method.
 
 4. Once the application is up and running, open your browser and navigate to http://localhost:8080. This should display your application's home page.
+
+## Output
+#### Landing Page
+![Landing Page](./images/landing_page.png)
+
+#### Select entry or exit locations that are loaded from Server.
+![Select Locations](./images/select_options.png)
+
+#### Result received from server
+![Result](./images/cost.png)
+
