@@ -12,6 +12,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.*;
 
+import static com.toll.pricing.utility.FormattingUtility.toDouble;
+
 @Component
 public class LocationRepository {
 
@@ -43,10 +45,6 @@ public class LocationRepository {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    private Double toDouble(Object value) {
-        return ((Number) value).doubleValue();
     }
 
     private List<Route> extractRoutes(JSONArray routesJSON) {

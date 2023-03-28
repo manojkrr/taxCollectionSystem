@@ -1,15 +1,16 @@
 package com.toll.pricing.service.impl;
 
-import com.toll.pricing.domain.Location;
 import com.toll.pricing.domain.CostOfTrip;
+import com.toll.pricing.domain.Location;
 import com.toll.pricing.service.LocationService;
 import com.toll.pricing.service.TollPricingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.DecimalFormat;
 import java.util.Optional;
+
+import static com.toll.pricing.utility.FormattingUtility.roundOffTwoDecimalPoints;
 
 @Service
 @Slf4j
@@ -25,12 +26,12 @@ public class TollPricingServiceImpl implements TollPricingService {
     /**
      * Method to Calculate Toll Charges
      * from entry Location to exit location
-     * */
+     */
     @Override
     public CostOfTrip getCostOfTrip(String entryLocationName, String exitLocationName) {
         Optional<Location> entryLocationOptional = locationService.getLocationByName(entryLocationName);
         Optional<Location> exitLocationOptional = locationService.getLocationByName(exitLocationName);
-        if(entryLocationOptional.isEmpty() || exitLocationOptional.isEmpty()) {
+        if (entryLocationOptional.isEmpty() || exitLocationOptional.isEmpty()) {
             throw new RuntimeException("Invalid Location Id(s)");
         }
         Location entryLocation = entryLocationOptional.get();
@@ -47,7 +48,6 @@ public class TollPricingServiceImpl implements TollPricingService {
 
     private double calculateCharge(double distanceInKms) {
         double charge = distanceInKms * 0.25D;
-        DecimalFormat df = new DecimalFormat("#.##");
-        return Double.parseDouble(df.format(charge));
+        return roundOffTwoDecimalPoints(charge);
     }
 }

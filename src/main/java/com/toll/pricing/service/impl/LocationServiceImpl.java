@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+import static com.toll.pricing.utility.FormattingUtility.roundOffTwoDecimalPoints;
+
 @Service
 public class LocationServiceImpl implements LocationService {
 
@@ -49,7 +51,7 @@ public class LocationServiceImpl implements LocationService {
                 }
             }
         }
-        return totalDistance;
+        return roundOffTwoDecimalPoints(totalDistance);
     }
 
     /**
