@@ -17,8 +17,7 @@ import static com.toll.pricing.utility.FormattingUtility.toDouble;
 @Component
 public class LocationRepository {
 
-    //Using linked list.
-    private final List<Location> locationsList = new LinkedList<>();
+    private final Map<Long, Location> locationMap = new HashMap<>();
 
     public LocationRepository() {
         loadLocations();
@@ -26,7 +25,7 @@ public class LocationRepository {
 
     private void loadLocations() {
         try {
-            //Parse the JSON and store values to linked list
+            //Parse the JSON and store values to the HashMap
             InputStream inputStream = new ClassPathResource("interchanges.json").getInputStream();
             JSONParser parser = new JSONParser();
             JSONObject jsonObj = (JSONObject) parser.parse(new InputStreamReader(inputStream));
@@ -39,9 +38,8 @@ public class LocationRepository {
                         .name((String) locationJSON.get("name"))
                         .routes(routes)
                         .build();
-                locationsList.add(location);
+                locationMap.put(location.getLocationId(), location);
             }
-            locationsList.sort(Comparator.comparing(Location::getLocationId));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -62,24 +60,17 @@ public class LocationRepository {
     }
 
     public List<Location> findAll() {
-        return locationsList;
+        return new ArrayList<>(locationMap.values());
     }
 
     public Optional<Location> findByName(String name) {
-        for (Location location : locationsList) {
-            if (location.getName().equalsIgnoreCase(name)) {
-                return Optional.of(location);
-            }
-        }
-        return Optional.empty();
+        return locationMap.values()
+                .stream()
+                .filter(location -> location.getName().equalsIgnoreCase(name))
+                .findFirst();
     }
 
     public Location findById(long locationId) {
-        for (Location location : locationsList) {
-            if (location.getLocationId() == locationId) {
-                return location;
-            }
-        }
-        return null;
+        return locationMap.get(locationId);
     }
 }
