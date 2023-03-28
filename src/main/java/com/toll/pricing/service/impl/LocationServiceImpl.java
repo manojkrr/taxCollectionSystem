@@ -38,7 +38,7 @@ public class LocationServiceImpl implements LocationService {
         if (entryLocation.getLocationId().equals(exitLocation.getLocationId())) {
             return 0;
         }
-        Location currentLocation = entryLocation;
+        Location currentLocation = locationRepository.findById(entryLocation.getLocationId());
         double totalDistance = 0;
         //Traversing from entry location to exit location
         while (currentLocation != null && !currentLocation.equals(exitLocation)) {
