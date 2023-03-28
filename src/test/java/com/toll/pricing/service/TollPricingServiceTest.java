@@ -2,6 +2,7 @@ package com.toll.pricing.service;
 
 import com.toll.pricing.domain.CostOfTrip;
 import com.toll.pricing.domain.Location;
+import com.toll.pricing.exception.InvalidLocationException;
 import com.toll.pricing.service.impl.TollPricingServiceImpl;
 import org.junit.Before;
 import org.junit.Rule;
@@ -92,7 +93,7 @@ public class TollPricingServiceTest {
                 .thenReturn(Optional.empty());
 
         //Expect Exception
-        exceptionRule.expect(RuntimeException.class);
+        exceptionRule.expect(InvalidLocationException.class);
         exceptionRule.expectMessage("Invalid Location Id(s)");
 
         //When

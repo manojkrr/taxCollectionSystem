@@ -2,6 +2,7 @@ package com.toll.pricing.service.impl;
 
 import com.toll.pricing.domain.CostOfTrip;
 import com.toll.pricing.domain.Location;
+import com.toll.pricing.exception.InvalidLocationException;
 import com.toll.pricing.service.LocationService;
 import com.toll.pricing.service.TollPricingService;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +33,7 @@ public class TollPricingServiceImpl implements TollPricingService {
         Optional<Location> entryLocationOptional = locationService.getLocationByName(entryLocationName);
         Optional<Location> exitLocationOptional = locationService.getLocationByName(exitLocationName);
         if (entryLocationOptional.isEmpty() || exitLocationOptional.isEmpty()) {
-            throw new RuntimeException("Invalid Location Id(s)");
+            throw new InvalidLocationException("Invalid Location Id(s)");
         }
         Location entryLocation = entryLocationOptional.get();
         Location exitLocation = exitLocationOptional.get();
