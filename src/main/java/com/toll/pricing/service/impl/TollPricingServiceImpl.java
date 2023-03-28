@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-import static com.toll.pricing.utility.FormattingUtility.roundOffTwoDecimalPoints;
+import static com.toll.pricing.utility.FormattingUtility.roundOff;
 
 @Service
 @Slf4j
@@ -48,6 +48,6 @@ public class TollPricingServiceImpl implements TollPricingService {
 
     private double calculateCharge(double distanceInKms) {
         double charge = distanceInKms * 0.25D;
-        return roundOffTwoDecimalPoints(charge);
+        return roundOff(charge,2);
     }
 }

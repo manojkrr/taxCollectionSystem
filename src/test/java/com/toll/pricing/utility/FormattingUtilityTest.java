@@ -2,7 +2,6 @@ package com.toll.pricing.utility;
 
 
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -12,8 +11,15 @@ public class FormattingUtilityTest {
     public void test_should_round_off_to_two_decimal_points() {
         double value = 12.3456;
         double expected = 12.35;
-        double actual = FormattingUtility.roundOffTwoDecimalPoints(value);
+        double actual = FormattingUtility.roundOff(value, 2);
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_should_ignore_rounding_if_rounding_is_zero() {
+        double value = 12.3456;
+        double actual = FormattingUtility.roundOff(value, 0);
+        assertEquals(value, actual);
     }
 
     @Test
