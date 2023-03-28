@@ -27,6 +27,6 @@ public class FormattingUtilityTest {
     @Test(expected = ClassCastException.class)
     public void test_should_not_convert_to_double_for_invalid_value() {
         Object value = "abc";
-        Double actual = FormattingUtility.toDouble(value);
+        FormattingUtility.toDouble(value);
     }
 }
