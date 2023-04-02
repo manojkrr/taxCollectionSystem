@@ -16,3 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Fetch list of locations from server and populate select boxes
+fetch('/location')
+    .then(response => response.json())
+    .then(locations => {
+        const entryLocationSelect = document.querySelector('#entry-location');
+        const exitLocationSelect = document.querySelector('#exit-location');
+
+        locations.forEach(location => {
+            const option = document.createElement('option');
+            option.value = location.name;
+            option.textContent = location.name;
+            entryLocationSelect.appendChild(option.cloneNode(true));
+            exitLocationSelect.appendChild(option);
+        });
+    });

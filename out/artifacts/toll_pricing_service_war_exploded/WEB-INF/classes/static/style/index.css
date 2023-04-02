@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+.header {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style the input fields */
+input[type=text], select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+/* Style the submit button */
+#calculate-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+#calculate-btn:hover {
+    background-color: #45a049;
+}
+
+/* Add a background color on hover */
+option:hover {
+    background-color: #f1f1f1;
+}
+
+/* Style the results section */
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.col30 {
+    width: 28%;
+    float: left;
+    padding: 10px 20px 20px;
+}
+
+.col50 {
+    width: 50%;
+    float: left;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.image-container {
+    float: left;
+    width: 100%;
+}
