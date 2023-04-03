@@ -3,18 +3,23 @@ package com.tax.system.controller;
 import com.tax.system.entities.Report;
 import com.tax.system.services.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@RestController
+@Controller
 @RequestMapping("/report")
 public class ReportController {
 
-    @Autowired
-    private ReportService reportService;
+    private final ReportService reportService;
 
-    @GetMapping("/")
+    @Autowired
+    public ReportController(ReportService reportService) {
+        this.reportService = reportService;
+    }
+
+    @GetMapping
     public String listReports(Model model) {
         List<Report> reports = reportService.getAllReports();
         model.addAttribute("reports", reports);
@@ -31,12 +36,12 @@ public class ReportController {
     @PostMapping("/save")
     public String saveReport(@ModelAttribute("report") Report report) {
         reportService.saveReport(report);
-        return "redirect:/reports/";
+        return "redirect:/report";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteReport(@PathVariable(value = "id") Long id) {
         reportService.deleteReport(id);
-        return "redirect:/reports/";
+        return "redirect:/report";
     }
 }

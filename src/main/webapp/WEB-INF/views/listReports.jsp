@@ -23,11 +23,11 @@
             <td>${report.user.username}</td>
             <td>${report.taxYear}</td>
             <td>${report.filePath}</td>
-            <td><a href="<c:url value='/report/delete/${report.id}'/>">Delete</a></td>
+            <td><a href="/report/delete/${report.id}">Delete</a></td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-<a href="<c:url value='/report/add'/>">Add Report</a>
+<a href="/report/add">Add Report</a>
 </body>
 </html>

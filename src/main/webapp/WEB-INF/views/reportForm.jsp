@@ -19,6 +19,6 @@
     <input type="text" name="filePath"/><br/>
     <input type="submit" value="Save"/>
 </form>
-<a href="<c:url value='/report/'/>">Cancel</a>
+<a href="/report">Cancel</a>
 </body>
 </html>

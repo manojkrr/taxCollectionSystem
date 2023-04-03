@@ -10,6 +10,6 @@
 <p>${message}</p>
 <p>Click <a href="/login">here</a> to log in.</p>
 <p>Don't have an account? Click <a href="/register">here</a> to register.</p>
-<p>To see all reports, Click <a href="/report/">here</a></p>
+<p>To see all reports, Click <a href="/report">here</a></p>
 </body>
 </html>

@@ -25,7 +25,7 @@ public class UserController {
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute User user, Model model) {
-        userService.registerUser(user.getUsername(), user.getPassword());
+        userService.registerUser(user);
         model.addAttribute("message", "User registered successfully!");
         return "redirect:/login";
     }

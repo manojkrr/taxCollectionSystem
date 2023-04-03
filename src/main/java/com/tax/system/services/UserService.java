@@ -4,7 +4,7 @@ import com.tax.system.entities.User;
 
 public interface UserService {
 
-    User registerUser(String username, String password);
+    User registerUser(User user);
 
     User loginUser(String username, String password);
 }

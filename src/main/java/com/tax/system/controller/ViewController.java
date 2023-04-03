@@ -10,8 +10,7 @@ public class ViewController {
 
     @GetMapping
     public String index(Model model) {
-//        List<Location> locations = locationService.getAllLocations();
-        model.addAttribute("message", "Hello World");
+        model.addAttribute("message", "File Your Taxes");
         return "index";
     }
 }
