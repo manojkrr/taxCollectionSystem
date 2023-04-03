@@ -1,5 +1,10 @@
 /* styles.css */
-
+.tax-photo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 body {
     background-color: #f5f5f5;
 }
@@ -55,4 +60,28 @@ body {
     color: #fff;
     background-color: #286090;
     border-color: #204d74;
+}
+.container {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    background-repeat: no-repeat;
+}
+
+h1, p {
+    color: white;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+a{
+ color: yellow;
+}
+
+label{
+    color: white;
 }

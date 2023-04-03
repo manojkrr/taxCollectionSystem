@@ -41,7 +41,7 @@ public class UserController {
         User loggedUser = userService.loginUser(user.getUsername(), user.getPassword());
         if (loggedUser != null) {
             model.addAttribute("message", "Logged in successfully!");
-            return "redirect:/dashboard";
+            return "redirect:/report";
         } else {
             model.addAttribute("error", "Invalid username or password.");
             return "login";
