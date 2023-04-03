@@ -41,18 +41,17 @@ public class UserController {
         User loggedUser = userService.loginUser(user.getUsername(), user.getPassword());
         if (loggedUser != null) {
             model.addAttribute("message", "Logged in successfully!");
-            return "redirect:/report";
+            model.addAttribute("isLoggedIn", true);
+            return "dashboard";
         } else {
             model.addAttribute("error", "Invalid username or password.");
-            return "login";
+            model.addAttribute("isLoggedIn", false);
         }
+        return "index";
     }
 
     @GetMapping("/dashboard")
     public String showDashboard(Model model) {
-        if(!model.containsAttribute("message")){
-            model.addAttribute("message", "Welcome to the dashboard!");
-        }
-        return "index";
+        return "dashboard";
     }
 }

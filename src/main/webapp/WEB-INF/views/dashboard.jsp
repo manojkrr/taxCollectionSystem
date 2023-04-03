@@ -12,9 +12,10 @@
 </head>
 <body class="container">
 <div style="background: black;padding: 30px;opacity: 1 !important;">
-    <h1>Tax Collection System</h1>
-    <p>Click <a href="/login">here</a> to log in.</p>
-    <p>Don't have an account? Click <a href="/register">here</a> to register.</p>
+    <h1>Welcome to the Dashboard</h1>
+    <p>Click <a href="/report">here</a> to see all reports.</p>
+    <p>Business Link <a href="/businesses">here</a></p>
+    <p><a href="/">Logout</a></p>
 </div>
 </body>
 </html>

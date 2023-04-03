@@ -10,7 +10,9 @@ public class ViewController {
 
     @GetMapping
     public String index(Model model) {
-        model.addAttribute("message", "File Your Taxes");
+        if(model.containsAttribute("isLoggedIn") && (boolean) model.getAttribute("isLoggedIn")){
+            return "dashboard";
+        }
         return "index";
     }
 }

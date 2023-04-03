@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>List of Reports</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/styles.css">
     <style>
         .container {
-            background-image: url("ReportImage.jpeg");
+            background-image: url("TaxPhoto.jpeg");
         }
     </style>
 </head>
 <body class="container">
 <div style="background: black;padding: 30px;opacity: 1 !important;color: white">
 <h1>List of Reports</h1>
+<p><a href="/dashboard">Back To Dashboard</a></p>
 <p>Add a <a href="/report/add" style="color: yellow">New Report</a>?</p>
 <hr>
     <table border="1" cellpadding="5" cellspacing="5" style="color: white">

@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style/styles.css">
     <style>
         .container {
-            background-image: url("ReportAdd.avif");
+            background-image: url("TaxPhoto.jpeg");
         }
     </style>
 </head>
 <body class="container">
-<div style="background: black;padding: 30px;opacity: 1 !important;>
+<div style="background: black;padding: 30px;opacity: 1 !important;">
     <h1>Add Report</h1>
-    <form method="post" action="<c:url value='/report/save'/>">
+    <form method="post" action="/report/save">
         <label>User:</label>
         <select name="user.id">
             <c:forEach items="${users}" var="user">
