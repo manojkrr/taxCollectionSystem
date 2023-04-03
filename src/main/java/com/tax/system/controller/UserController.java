@@ -50,7 +50,9 @@ public class UserController {
 
     @GetMapping("/dashboard")
     public String showDashboard(Model model) {
-        model.addAttribute("message", "Welcome to the dashboard!");
+        if(!model.containsAttribute("message")){
+            model.addAttribute("message", "Welcome to the dashboard!");
+        }
         return "index";
     }
 }
