@@ -1,5 +1,6 @@
 package com.tax.system.controller;
 
+import com.tax.system.entities.TaxCollection;
 import com.tax.system.services.TaxCollectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -21,12 +22,12 @@ public class TaxCollectionController {
 
     @GetMapping
     public String showTaxCollectionForm(Model model) {
-        model.addAttribute("taxRecord", new TaxRecord());
+        model.addAttribute("taxRecord", new TaxCollection());
         return "taxcollection";
     }
 
     @PostMapping
-    public String processTaxCollectionForm(TaxRecord taxRecord) {
+    public String processTaxCollectionForm(TaxCollection taxRecord) {
         taxCollectionService.saveTaxRecord(taxRecord);
         return "redirect:/taxcollection";
     }

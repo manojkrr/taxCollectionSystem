@@ -1,5 +1,6 @@
 package com.tax.system.services.impl;
 
+import com.tax.system.entities.TaxCollection;
 import jakarta.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class TaxCollectionServiceImpl implements TaxCollectionService {
     }
 
     @Override
-    public void saveTaxRecord(TaxRecord taxRecord) {
+    public void saveTaxRecord(TaxCollection taxRecord) {
         entityManager.persist(taxRecord);
     }
 }
