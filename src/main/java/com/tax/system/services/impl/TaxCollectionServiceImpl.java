@@ -5,7 +5,6 @@ import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tax.system.entities.TaxRecord;
 import com.tax.system.services.TaxCollectionService;
 
 @Service
